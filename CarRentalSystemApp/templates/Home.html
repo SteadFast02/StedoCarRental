@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/static/homeicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEDO-CARENTAL</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="/static/Home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<style>
+    .nav2{
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+    }
+    .container-fluid{
+        background-color: black;
+    }
+    .container-fluid>a>span{
+        font-family: cursive;
+        font-size: x-small;
+    }
+    .container-fluid>a>span:hover{
+        font-family: cursive;
+        font-size: smaller;
+    }
+    .loginlink{
+        color: white;
+        /* margin-left: 10px; */
+    }
+    .loginlink>span>a{
+        color: white;
+        /* margin-left: 10px; */
+        text-decoration: none;
+    }
+    .loginlink>span>a:hover{
+        color: rgb(132, 132, 132);
+        margin-left: 10px;
+        text-decoration: none;
+        font-size: large;
+
+    }
+    .faqs{
+        color: white;
+        display: flex;
+        margin-right: 15px;
+    }
+    .faqs>a{
+        color: white;
+        text-decoration: none;
+
+    }
+    .faqs>a:hover{
+        color: rgb(132, 132, 132);
+        text-decoration: none;
+        font-size: large;
+        
+    }
+    .nav-item>a:hover{
+        color: rgb(132, 132, 132);
+        text-decoration: none;
+        font-size: large;
+    }
+    .showcat{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    body{
+        margin: 0;
+        max-width: 100%;
+        /* background: #ebebeb; */
+    }
+    .navbar{
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+    }
+    .maincontainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        /* border: red 1px solid; */
+        padding: 1.5rem;
+        flex-wrap: wrap;
+
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        /* flex-wrap: wrap; */
+        /* border: red 1px solid; */
+
+    }
+    .leftportion{
+        /* border: red 1px solid; */
+        width: 30%;
+        /* height: 100rem; */
+        padding: 5px;
+
+    }
+    .rightportion{
+        /* border: red 1px solid; */
+        width: 70%;
+        background-color: #f1f4f8;
+        padding-top:1rem;
+        
+    }
+    .bold
+    {
+        font-weight: bold;
+    }
+    .m1rd{
+        margin-bottom: 1rem;
+    }
+    .m1_2rd{
+        margin-bottom: .5rem;
+    }
+    .a{
+        text-decoration: none;
+        color: rgb(122, 122, 122);
+    }
+    .listvehicle{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* border: red 1px solid; */
+        justify-content: space-around;
+        padding: 1rem;
+        
+    }
+    .containerhover{
+        transition: all 0.6s linear 0s;
+    }
+    .containerhover:hover{
+        transform: scale(1.1);
+    }
+    .advertiselist{
+        /* border: red 1px solid; */
+        background: white;
+        width: 16em;
+        height: 18rem;
+        border-radius: 15px;
+        margin-left: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .advertiselist>img{
+        width:15rem;
+    }
+    .advertise{
+        display: flex;
+        flex-direction: row;
+        padding: 0.5rem;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    /* .line
+    {
+        width: 90%;
+        background: black;
+        height: 1.5px;
+
+    } */
+    .threedview{
+      -webkit-box-shadow: 0px 8px 25px -7px rgba(0, 0, 0, 0.96);
+      -moz-box-shadow: 0px 8px 25px -7px rgba(0, 0, 0, 0.96);
+      box-shadow: 0px 8px 25px -7px rgba(0, 0, 0, 0.96);
+    }
+
+    .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    /* border: red 1px solid; */
+    /* padding: 20px; */
+    background: linear-gradient(180deg, #333333, transparent);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  /* border: red 1px solid; */
+
+}
+
+.item {
+  flex: 0 0 20%; /* Adjust the width as per your requirements */
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: red 1px solid; */
+
+}
+.item>div{
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* border: red 1px solid; */
+    border-radius: 20px;
+    height: 5rem;
+    width: 10rem;
+    background-image: linear-gradient( 0deg,  rgba(56,24,40,1) -10.7%, rgba(23,148,185,1) 100.2% );}
+.item>div>div>img{
+    width: 3rem;
+}
+.item>div>div{
+    font-size: 10px;
+    font-family: cursive;
+    /* margin-top: 10px; */
+}
+
+.datetime{
+    /* border: red 1px solid; */
+    padding: 1rem;
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Material Symbols Outlined';
+}
+
+.datetime>div{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    color: white;
+}
+    
+</style>
+<body>
+
+    <div class="nav2">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="http://localhost:8000/api/indexinterface">
+                <img src="/static/carrentallogob1.png" width="60px" alt="">
+                <span>STEDO-CARENTAL</span>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="http://localhost:8000/api/home">Home</a>
+                  </li>
+                </ul>
+                <span class="faqs">
+                    <a href="http://localhost:8000/api/faqs">FAQs</a>
+                </span>
+                <span class="loginlink">
+                    <i style="font-size: 32;" class="fa fa-sign-in" aria-hidden="true"></i>
+                    <span>
+                        <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        Login & Signup  
+                        </a>
+                    </span>
+                </span>
+                
+              </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel" id="catid">
+          
+        </div>
+    </div>
+    
+
+
+    <div class="maincontainer">
+        <div class="leftportion">
+            <div style="display: flex;justify-content: space-between;" class=" m1rd">
+                <div class="bold">Filter</div>
+                <span>
+                    <a class="a" href="">clear all</a>
+                </span>
+            </div>
+            <div class="m1_2rd">
+                <div class="bold">Category</div>
+                <div id="categorycheck">
+
+                </div>
+                
+            </div>
+            <div class="m1_2rd">
+                <div class="bold">SubCategory</div>
+                <div id="subcategorycheck">
+
+                </div>
+                
+            </div>
+            <div class="m1_2rd">
+                <div class="bold">Brand</div>
+                <div id="brandcheck">
+
+                </div>
+                
+            </div>
+            <div class="m1_2rd">
+                <div class="bold">Fuel Type</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> Diesel</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> Petrol</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> CNG</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> EV</div>
+            </div>
+            <div class="m1_2rd">
+                <div class="bold">Transmission Type</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> Automatic</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> Manual</div>
+            </div>
+            <div class="m1_2rd">
+                <div class="bold">Seating Capacity</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 5+ seats</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 8+ seats</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 20+ seats</div>
+                <div><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> 40+ seats</div>
+            </div>
+        </div>
+        <div class="rightportion">
+            <div class="" >
+                <div class="datetime ">
+                    <div class="threedview">
+                        City:{{userdata.city}}  From:{{userdata.starttime}}   To:{{userdata.endtime}} Duration:{{userdata.days}}
+                    </div>
+                </div>
+                <div class="advertise">
+                    <div class="advertiselist m1rd threedview">
+                        <img src="/static/PLP Banner_desktop.png">
+                    </div>
+                    <div class="advertiselist m1rd threedview">
+                        <img src="/static/PLP Banner_desktop.png">
+                    </div>
+
+                </div>
+
+                <div id="vehiclecount">
+                </div>
+
+                <span id="listvehicle" class="listvehicle">
+
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <!-- <div style="display: flex;flex-direction: row;">
+        <div class="smallbox">
+            <div><img src="/static/Bookcar.PNG" style="width: 270px;height: 300px; margin-top: 5px;margin-left: 5px;">
+            </div>
+        </div>
+
+        <div id="listvehicle" style="display: flex;flex-direction: row;flex-wrap: wrap;"> 
+        </div>
+    </div> -->
+
+</body>
+
+<script>
+    $(document).ready(function() {
+  var carousel = $(".carousel");
+  var itemWidth = $(".item").outerWidth(true); // Include margin if any
+  var visibleItems = Math.floor(carousel.parent().width() / itemWidth);
+  var currentPosition = 0;
+
+  setInterval(function() {
+    if (currentPosition === (carousel.children().length - visibleItems)) {
+      currentPosition = 0;
+      carousel.css("transform", "translateX(0)");
+    } else {
+      currentPosition++;
+      carousel.css("transform", "translateX(-" + (currentPosition * itemWidth) + "px)");
+    }
+  }, 3000); // Adjust the interval (in milliseconds) as per your preference
+});
+</script>
+</html>

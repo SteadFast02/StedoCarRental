@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<style>
+    .maincontainer{
+        /* border: red 1px solid; */
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .leftportion{
+        /* border: red 1px solid; */
+        width: 22%;
+        height: 50rem;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .leftportion>div{
+        /* border: red 1px solid; */
+
+        position: fixed;
+        z-index: 9999;
+        width: 21%;
+    }
+    .leftportion>div>div{
+        /* border: red 1px solid; */
+        width: 100%;
+        height: 3rem;
+        margin-bottom: 0.5rem;
+        /* background: none; */
+    }
+    .leftportion>div>div>a>button{
+        /* border: red 1px solid; */
+        width: 100%;
+        height: 3rem;
+        font-size: small;
+        border: none;
+        /* background: none; */
+
+    }
+    .rightportion{
+        /* border: red 1px solid; */
+        width: 75%;
+        padding: 1rem;
+    }
+    .threedview{
+      -webkit-box-shadow: 0px 8px 25px -7px rgba(0, 0, 0, 0.96);
+      -moz-box-shadow: 0px 8px 25px -7px rgba(0, 0, 0, 0.96);
+      box-shadow: 0px 8px 25px -7px rgba(0, 0, 0, 0.96);
+    }
+    .box{
+        margin-bottom: .5rem;
+    }
+    .boxbtn{
+        display: flex;
+        justify-content: flex-start;
+        padding: 1.2rem;
+        border: none;
+        background: #d9d9d9;
+        color: black;
+        border-radius: 5px;
+        width: 100%;
+    }
+    .title{
+        /* border: red 1px solid; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .title>div{
+        /* border: red 1px solid; */
+        font-size: 1.7rem; 
+        font-weight: bold; 
+        font-family: initial; 
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        /* background: linear-gradient(45deg, #7b7b7b, #e1e1e1); */
+        padding: 5px;
+        border-radius: 4px;
+    }
+    .title>button{
+        background: linear-gradient(45deg, #2f7578, #1cb912);
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        font-weight: 600;
+    }
+    .decorate{
+        text-decoration: none;
+        color: black;
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <div>
+        {% include 'NavBar.html' %}
+    </div>
+
+    <!-- Navbar End -->
+
+    <div class="maincontainer">
+      <div class="leftportion">
+            <div>
+                <div>
+                    <a href="#about" class="decorate">
+                        <button class="threedview">
+                            About STEDO-CarRental
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="#yourbooking" class="decorate">
+                        <button class="threedview">                            
+                                Your Booking                            
+                        </button>
+                    </a>
+                </div>
+                <div class="threedview">
+                    <a href="#paymentrefund" class="decorate">
+                        <button>
+                            Payments & Refunds
+                        </button>
+                    </a>
+                </div>
+                <div class="threedview">
+                    <a href="#yourtrip" class="decorate">
+                        <button>
+                            Your Trip
+                        </button>
+                    </a>
+                </div>
+            </div>
+      </div>
+      <div class="rightportion">
+           <!-- 1 Title -->
+            <div class="title">
+                <div id="about">
+                    About STEDO-CarRental 
+                </div>
+                <button class="threedview" type="button" data-bs-toggle="collapse" data-bs-target=".collapseExample" data-bs-target=".collapseExample" aria-expanded="false" aria-controls="collapseExample">Expand All
+                </button>            
+            </div>
+            <!-- 1 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#1collapseExample" data-bs-target=".allcollapse1" aria-expanded="false" aria-controls="collapseExample">
+                        What documents do I need to take the delivery of my Revv car?
+                    </button>
+                </div>
+                <div class="collapse collapseExample" id="1collapseExample" >
+                    <div class="card card-body">
+                        While taking the delivery of your car, you will need to show your ORIGINAL Driving License and ID proof (same as the ones whose details you provided while making the booking). These documents will be verified for validity. In case these documents are unavailable/invalid/unverifiable, your booking will be subject to cancellation. Revv’s decision in this matter will be final and binding. Please note that driving license printed on A4 sheet of paper (original or otherwise) will not be considered as a valid document.
+                    </div>
+                </div>
+            </div>
+            <!-- 2 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#2collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Am I eligible to use Revv's services?
+                    </button>
+                </div>
+                <div class="collapse collapseExample" id="2collapseExample" >
+                    <div class="card card-body">
+                        To avail Revv's services, you must be at least 21 years old, and your driving license for "Light Motor Vehicles" must be at least 1 year old (at the time of starting the trip). Driving license printed on A4 sheet of paper (original or otherwise), driving license on Digilocker or M-Parivaahan app and commercial driving licenses will not be accepted.
+                    </div>
+                </div>
+            </div>
+            <!-- 3 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#3collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Which are the areas where I can avail Revv's services?
+                    </button>
+                </div>
+                <div class="collapse collapseExample" id="3collapseExample" >
+                    <div class="card card-body">
+                        We are currently serving in Bangalore, Hyderabad, Chennai, Mumbai, Pune, Delhi NCR, Chandigarh, Jaipur, Visakhapatnam, Mysore, Coimbatore, Mangalore, Kolkata, Kochi, Ahmedabad, Trivandrum, Surat, Tirupati , Vijayawada, Bhubaneswar, Nagpur & Vadodara.
+
+                        Delhi NCR : We are covering most parts of Delhi & Gurgaon and some parts of Noida & Ghaziabad.
+
+                        Hyderabad, Bangalore, Mumbai, Pune, Jaipur, Chennai, Visakhapatnam, Mangalore, Kolkata, Kochi, Ahmedabad, Trivandrum, Surat, Tirupati, Vijayawada, Bhubaneswar, Nagpur & Vadodara : We serve the main city and the airport area.
+                    </div>
+                </div>
+            </div>
+            <!-- 4 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#4collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Is there a "Kilometres limit" to how much I can drive?
+                    </button>
+                </div>
+                <div class="collapse collapseExample" id="4collapseExample" >
+                    <div class="card card-body">
+                        This depends on the pricing plan that you select. If you go for the “Unlimited kms” pricing plans (available only without fuel, and only for bookings whose duration is more than 72 hours), there is absolutely no limit to the kilometres that you can drive, and you have complete flexibility of driving the car as much as you want. Revv it up! Other pricing plans have a "Kilometres limit", which varies based on the plan selected. You can still drive beyond the kilometres limit, but the additional kilometres clocked will attract an additional charge.
+                    </div>
+                </div>
+            </div>
+            <!-- 5 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#5collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Are there restrictions on where I can travel?
+                    </button>
+                </div>
+                <div class="collapse collapseExample" id="5collapseExample">
+                    <div class="card card-body">
+                        All of our cars are equipped with an All India Tourist Permit, so you are free to drive anywhere in the country. All India Tourist Permit means that the car is legally permitted to ply in any state in the country, after paying the inter-state taxes at the state borders. However, we do not permit taking Revv vehicles to Leh/Ladakh region, Kaza/Nako region and spiti valley. We also advise you to avoid bad terrains (especially in non- SUV cars) and areas affected by civil unrest.
+
+                        Please note: Interstate taxes at the state borders are to be paid and borne by the customer. Our cars are equipped with Fast tag devices for your convenience. The toll charges incurred during your trip will be billed to you in your invoice.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 2 Title -->
+            <div class="title">
+                <div id="yourbooking">
+                    YOUR BOOKINGS 
+                </div>
+                <button class="threedview" type="button" data-bs-toggle="collapse" data-bs-target=".collapseExampletitle2" data-bs-target=".collapseExampletitle2" aria-expanded="false" aria-controls="collapseExample">Expand All
+                </button>            
+            </div>
+            <!-- 1 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#1collapseExampletitle2" data-bs-target=".allcollapse1" aria-expanded="false" aria-controls="collapseExample">
+                        How do I make a booking?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle2" id="1collapseExampletitle2" >
+                    <div class="card card-body">
+                        Booking with us is quick and easy. You can make a booking through our app (android or iOS), website or by giving us a call at +91-9250035555. Just select your city, date and time of your trip, key in your location and choose the type of car you want. Then enter your payment details, confirm payment and you are ready to go!
+                    </div>
+                </div>
+            </div>
+            <!-- 2 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#2collapseExampletitle2" aria-expanded="false" aria-controls="collapseExample">
+                        What if I need to modify or cancel my booking?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle2" id="2collapseExampletitle2" >
+                    <div class="card card-body">
+                        You can modify or cancel your booking through either our app, website or by calling us. Our ability to modify/cancel the booking and the relevant charges depend upon your time of informing us and availability of cars. Please refer to our Fee policy for more details on the allowable modifications and applicable charges.
+                    </div>
+                </div>
+            </div>
+            <!-- 3 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#3collapseExampletitle2" aria-expanded="false" aria-controls="collapseExample">
+                        What happens if I return the car late?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle2" id="3collapseExampletitle2" >
+                    <div class="card card-body">
+                        We understand that sometimes there can be last-minute changes in your plans, and we will try our best to accommodate them. But in situations where it can cause trouble to the next user (ie, the person whose booking starts after your ends), we cannot allow late returns. Please refer to our Fee policy for more details on late fees and extension charges
+                    </div>
+                </div>
+            </div>
+            <!-- 4 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#4collapseExampletitle2" aria-expanded="false" aria-controls="collapseExample">
+                        If I return the car before the scheduled end time of my booking, do I get any refunds?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle2" id="4collapseExampletitle2" >
+                    <div class="card card-body">
+                        In case of shortening, we can try arranging an earlier pickup of the car, if you inform us at least 3 hours before your preferred pick-up time. However, no charges or refunds will be applicable on the base fare for the original trip.
+                    </div>
+                </div>
+            </div>
+            <!-- 5 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#5collapseExampletitle2" aria-expanded="false" aria-controls="collapseExample">
+                        What all is included in my booking?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle2" id="5collapseExampletitle2">
+                    <div class="card card-body">
+                        Our prices include the rental charge, insurance and GST. You have the option of “with fuel” and “without fuel” pricing. In “with fuel” pricing, prices include fuel. In “without fuel” pricing, prices exclude fuel.
+
+                        Our prices do not include tolls, inter-state taxes and parking. No hidden charges!
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- 3 Title -->
+            <div class="title">
+                <div id="paymentrefund">
+                    PAYMENTS & REFUNDS
+                </div>
+                <button class="threedview" type="button" data-bs-toggle="collapse" data-bs-target=".collapseExampletitle3" data-bs-target=".collapseExampletitle3" aria-expanded="false" aria-controls="collapseExample">Expand All
+                </button>            
+            </div>
+            <!-- 1 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#1collapseExampletitle3" data-bs-target=".allcollapse1" aria-expanded="false" aria-controls="collapseExample">
+                        What modes of payments are accepted?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle3" id="1collapseExampletitle3" >
+                    <div class="card card-body">
+                        We accept payments by credit cards, debit cards, net-banking, UPI and popular wallets. Payments need to be made in advance through our website or mobile app.
+                    </div>
+                </div>
+            </div>
+            <!-- 2 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#2collapseExampletitle3" aria-expanded="false" aria-controls="collapseExample">
+                        Do I get any reimbursement for the fuel I fill in my Revv car?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle3" id="2collapseExampletitle3" >
+                    <div class="card card-body">
+                        For “with fuel” pricing: If you need to refuel during your journey, we will reimburse the cost. Just show the fuel bills to our delivery executive at the time of returning the car, and allow him to take a photograph of them. Please do NOT hand-over the original bill to the delivery executive, we will not be responsible for loss of bills handed over to the delivery executive. Please note that:
+                        Fuel bills need to be shown to our delivery executive at the time of return, we will NOT be able to reimburse fuel bills shared with us later.
+                        The fuel expense needs to reconcile reasonably with the distance travelled.
+                        The fuel expense needs to reconcile reasonably with the standard fuel efficiency of the car. For the purpose of this reconciliation and for the benefit of the user, we assume a lower mileage than what is defined by ARAI (Automotive Research Association of India).
+                        The date on the fuel bill should fall within the booking period.
+                        Hand-written fuel bills will be considered invalid.
+                        For “without fuel” pricing: We give you a full tank, and we need the same back from you. Hence there is no need for any fuel reimbursements. In the rare instances where we give you less-than- full tank fuel, and you return us more fuel than what you got from us, we will reimburse the difference.
+                    </div>
+                </div>
+            </div>
+            <!-- 3 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#3collapseExampletitle3" aria-expanded="false" aria-controls="collapseExample">
+                        Who pays for parking and tolls/inter-state entry taxes?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle3" id="3collapseExampletitle3" >
+                    <div class="card card-body">
+                        These expenses depend on your usage, hence you need to pay for them.
+
+                        Our cars are equipped with Fast tag devices for your convenience. The toll charges incurred during your trip will be billed to you in your invoice.
+                    </div>
+                </div>
+            </div>
+            <!-- 4 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#4collapseExampletitle3" aria-expanded="false" aria-controls="collapseExample">
+                        Do I need to pay the fines incurred during my booking, due to parking/traffic violations?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle3" id="4collapseExampletitle3" >
+                    <div class="card card-body">
+                        Yes.
+                    </div>
+                </div>
+            </div>
+            <!-- 5 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#5collapseExampletitle3" aria-expanded="false" aria-controls="collapseExample">
+                        How much time does it take to get my refund back?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle3" id="5collapseExampletitle3">
+                    <div class="card card-body">
+                        All refunds are typically made within 10 days of completing the bookings. However, in some cases, there might be some procedural delays from the banks. Please do let us know in case your refund has not been credited to your account within 10 days and we will make sure we do everything we can to expedite it.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 4 Title -->
+            <div class="title">
+                <div id="yourtrip">
+                    YOUR TRIP
+                </div>
+                <button class="threedview" type="button" data-bs-toggle="collapse" data-bs-target=".collapseExampletitle4" data-bs-target=".collapseExampletitle4" aria-expanded="false" aria-controls="collapseExample">Expand All
+                </button>            
+            </div>
+            <!-- 1 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#1collapseExampletitle4" data-bs-target=".allcollapse1" aria-expanded="false" aria-controls="collapseExample">
+                        What documents do I need to take the delivery of my Revv car?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle4" id="1collapseExampletitle4" >
+                    <div class="card card-body">
+                        While taking the delivery of your car, you will need to show your ORIGINAL Driving License and ID proof (same as the ones whose details you provided while making the booking). These documents will be verified for validity. In case these documents are unavailable/invalid/unverifiable, your booking will be subject to cancellation. Revv’s decision in this matter will be final and binding. Please note that driving license printed on A4 sheet of paper (original or otherwise) will not be considered as a valid document.
+                    </div>
+                </div>
+            </div>
+            <!-- 2 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#2collapseExampletitle4" aria-expanded="false" aria-controls="collapseExample">
+                        How do I check-in for my booking?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle4" id="2collapseExampletitle4" >
+                    <div class="card card-body">
+                        Our delivery executive will deliver the car to your doorstep. Before he hands- over the car to you, he will share with you a pre-filled checklist that summarises the car’s condition at that time. Please confirm the details in the checklist, sign it and you are good to go. In case any information in the checklist is not correct, please notify the delivery executive or call us.
+                    </div>
+                </div>
+            </div>
+            <!-- 3 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#3collapseExampletitle4" aria-expanded="false" aria-controls="collapseExample">
+                        What do I do if the vehicle breaks down or if I meet with an accident?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle4" id="3collapseExampletitle4" >
+                    <div class="card card-body">
+                        In such cases, please notify us Revv immediately (by calling) and we will guide you through the entire process. We will coordinate with the road-side assistance and insurance. Unless unavoidable, please do not leave the scene of the accident until proper support has arrived. You may be required to file/sign formality documents associated with the accident.
+                    </div>
+                </div>
+            </div>
+            <!-- 4 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#4collapseExampletitle4" aria-expanded="false" aria-controls="collapseExample">
+                        How do I check-out from my booking?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle4" id="4collapseExampletitle4" >
+                    <div class="card card-body">
+                        On your return, please check-out from your booking using our app. You also have the option of calling us to notify. Even if you forget to notify us, you will be charged only till the actual end time of your booking.
+                    </div>
+                </div>
+            </div>
+            <!-- 5 box -->
+            <div class="box">
+                <div>
+                    <button class="boxbtn threedview" type="button" data-bs-toggle="collapse" data-bs-target="#5collapseExampletitle4" aria-expanded="false" aria-controls="collapseExample">
+                        What are the requirements when I drive across a State border?
+                    </button>
+                </div>
+                <div class="collapse collapseExampletitle4" id="5collapseExampletitle4">
+                    <div class="card card-body">
+                        Each State has different procedures and regulations. Most States will require a commercially registered vehicle to stop at the border RTO station to pay the relevant tolls/taxes. All Revv cars are equipped with original copies of the RC Card, Insurance Note, Self-Drive License, and the All India Permit, which will help you get through this conveniently. For many states, the state entry tax can be paid online as well.
+                    </div>
+                </div>
+            </div>
+
+      </div>
+    </div>
+</body>
+</html>

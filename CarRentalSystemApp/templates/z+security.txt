@@ -1,0 +1,51 @@
+Category
+========
+Category id(PK)
+Category Name
+Category Description
+icon
+
+SubCategory
+========
+SubCategory id(PK)
+Category Id(FK)
+Company/Brand Name
+SubCategory Name
+SubCategory Description
+Icon
+
+Vehicle
+=======
+Vehicle Id (PK)
+Category Id(FK)
+SubCategory id(FK)
+Model Year
+Price
+Insured(radio)
+Registration Num..
+OwnerName
+MobileNumber
+Color
+Fuel Type
+Number Of Seats
+Transmission type (radio)
+Car Picture
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+
+            
